@@ -15,7 +15,7 @@ d = []
 e = []
 m = []
 k = []
-with open('spisak', 'r+') as f:
+with open('spisak.txt', 'r+') as f:
     for i in f:
         c.append(i[0:len(i) - 1])
 
