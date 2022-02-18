@@ -1,24 +1,13 @@
-broj = 0
-podela = []
-pali = 0
-sest = 0
-sedam = 0
-osam = 0
-devet = 0
-deset = 0
-nije_izaslo = 0
-c = []
-a = []
-b = []
-r = []
-d = []
-e = []
-m = []
-k = []
+broj,pali,sest,sedam,osam,devet,deset,nije_izaslo,moja_ocena = 0,0,0,0,0,0,0,0,0
+podela,a,b,c,r,d,e,m,k = [],[],[],[],[],[],[],[],[]
+moj_indeks='2021/0393'
 with open('spisak.txt', 'r+') as f:
     for i in f:
         c.append(i[0:len(i) - 1])
-
+        indeks=i[0:9]
+        #print(moj_indeks)
+        if indeks == moj_indeks:
+            moja_ocena=c[-1][-1]
         if (c[-1][-1]) == '5':
             # c=[]
             pali += 1
@@ -73,4 +62,6 @@ with open('spisak.txt', 'r+') as f:
     with open('deset.txt', 'w') as p:
         for i in m:
             p.write(f'{i}\n')
-print((pali * 5 + 6 * sest + 7 * sedam + 8 * osam + 9 * devet + 10 * deset) / broj)
+print('Moja ocena:',moja_ocena)
+print('Procenat palih:',round(pali/broj *100,2),'%')
+print('\n5:',pali,'\n6:',sest,'\n7:',sedam,'\n8:',osam,'\n9:',devet,'\n10:',deset)
